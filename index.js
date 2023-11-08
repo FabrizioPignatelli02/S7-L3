@@ -52,28 +52,23 @@ fetch(url)
       divCardBody.appendChild(divButtonCard);
       library.appendChild(divCard);
 
-      deleteBookButton.onclick = () => {
-        divCard.remove();
-      };
-
       const articleShopping = document.createElement("li");
 
       const deleteArticleShopping = document.createElement("button");
       deleteArticleShopping.innerText = "❌";
 
+      const dropdownMenu = document.getElementById("dropMenu");
+
+      const titleArticle = document.createElement("p");
+      titleArticle.classList.add("lessWord");
+      titleArticle.innerText = book.title;
+
+      const priceArticle = document.createElement("p");
+      priceArticle.innerText = "€ " + book.price;
+
+      const hr = document.createElement("hr");
+
       buyBookButton.onclick = () => {
-        const dropdownMenu = document.getElementById("dropMenu");
-        console.log(dropdownMenu);
-
-        const titleArticle = document.createElement("p");
-        titleArticle.classList.add("lessWord");
-        titleArticle.innerText = book.title;
-
-        const priceArticle = document.createElement("p");
-        priceArticle.innerText = "€ " + book.price;
-
-        const hr = document.createElement("hr");
-
         articleShopping.appendChild(titleArticle);
         articleShopping.appendChild(priceArticle);
         articleShopping.appendChild(deleteArticleShopping);
@@ -81,8 +76,12 @@ fetch(url)
 
         dropdownMenu.appendChild(articleShopping);
       };
-
       deleteArticleShopping.onclick = () => {
+        articleShopping.remove();
+      };
+
+      deleteBookButton.onclick = () => {
+        divCard.remove();
         articleShopping.remove();
       };
     });
