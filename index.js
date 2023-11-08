@@ -56,6 +56,25 @@ fetch(url)
         divCard.remove();
       };
 
-      buyBookButton.onclick = () => {};
+      buyBookButton.onclick = () => {
+        const articleShopping = document.createElement("li");
+        const dropdownMenu = document.getElementById("dropMenu");
+        console.log(dropdownMenu);
+
+        const titleArticle = document.createElement("p");
+        titleArticle.classList.add("lessWord");
+        titleArticle.innerText = book.title;
+
+        const priceArticle = document.createElement("p");
+        priceArticle.innerText = "€ " + book.price;
+
+        const hr = document.createElement("hr");
+
+        articleShopping.appendChild(titleArticle);
+        articleShopping.appendChild(priceArticle);
+        articleShopping.appendChild(hr);
+
+        dropdownMenu.appendChild(articleShopping);
+      };
     });
   });

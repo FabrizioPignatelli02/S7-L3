@@ -19,6 +19,15 @@
     -webkit-line-clamp: var(--max-lines);
 }
 
+.lessWord{
+    --max-lines: 1; 
+    overflow: hidden;
+     
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+}
+
 .card p{
     font-size: 30px;
     font-weight: bolder;
@@ -56,3 +65,4 @@
 body{
     text-align: center;
 }
+
