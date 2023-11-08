@@ -31,6 +31,15 @@
     object-fit: cover;
 }
 
+.btn{
+    font-size: 30px;
+}
+
+.btn:hover{
+    background-color: rgba(211, 211, 211, 0.486);
+}
+
+
 #library{
     display: flex;
     flex-wrap: wrap;

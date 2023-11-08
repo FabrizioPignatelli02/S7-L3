@@ -27,10 +27,35 @@ fetch(url)
       price.classList.add("card-text");
       price.innerText = "€ " + book.price;
 
+      const deleteBookButton = document.createElement("button");
+      deleteBookButton.classList.add("btn");
+      deleteBookButton.classList.add("border-0");
+      deleteBookButton.classList.add("p-0");
+      deleteBookButton.innerText = "❌";
+
+      const buyBookButton = document.createElement("button");
+      buyBookButton.classList.add("btn");
+      buyBookButton.classList.add("border-0");
+      buyBookButton.classList.add("p-0");
+      buyBookButton.innerText = "🛒";
+
+      const divButtonCard = document.createElement("div");
+      divButtonCard.classList.add("d-flex");
+      divButtonCard.classList.add("justify-content-around");
+
       divCard.appendChild(imgCard);
       divCard.appendChild(divCardBody);
       divCardBody.appendChild(title);
       divCardBody.appendChild(price);
+      divButtonCard.appendChild(buyBookButton);
+      divButtonCard.appendChild(deleteBookButton);
+      divCardBody.appendChild(divButtonCard);
       library.appendChild(divCard);
+
+      deleteBookButton.onclick = () => {
+        divCard.remove();
+      };
+
+      buyBookButton.onclick = () => {};
     });
   });
